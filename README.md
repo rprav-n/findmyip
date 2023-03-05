@@ -1,8 +1,12 @@
-<img src="https://raw.githubusercontent.com/rprav-n/findmyip/main/FindMyIP/Assets.xcassets/AppIcon.appiconset/Iconfindmyip%20copy.png" width=100 />
+<img src="https://raw.githubusercontent.com/rprav-n/findmyip/main/FindMyIP/Assets.xcassets/AppIcon.appiconset/Iconfindmyip%20copy.png" alt="App Icon" width=100 />
 
 # FindMyIP
 
 FindMyIP is a macOS menu bar app that helps users quickly find and copy their IP address.
+
+# Screenshot
+
+<img src="https://raw.githubusercontent.com/rprav-n/findmyip/main/findmyip-screenshot.png" alt="App Screenshot" />
 
 ## Features
 
