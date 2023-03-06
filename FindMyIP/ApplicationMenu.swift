@@ -14,12 +14,12 @@ class ApplicationMenu: NSObject {
     func createMenu() -> NSMenu {
         let contentView = ContentView()
         let topView = NSHostingController(rootView: contentView)
-        topView.view.frame.size = CGSize(width: 200, height: 25)
+        topView.view.frame.size = CGSize(width: 200, height: 100)
         
         let customMenuItem = NSMenuItem()
         customMenuItem.view = topView.view
         menu.addItem(customMenuItem)
-        menu.addItem(NSMenuItem.separator())
+        //menu.addItem(NSMenuItem.separator())
         
         // About menu item
         let aboutMenuItem = NSMenuItem(title: "About FindMyIP", action: #selector(about), keyEquivalent: "")

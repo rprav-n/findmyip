@@ -44,6 +44,7 @@ struct ContentView: View {
                     .toggleStyle(.switch)
                     .toggleStyle(SwitchToggleStyle(tint: .blue))
                     .padding(.horizontal, 10)
+                    .padding(.top, 2)
                     .onChange(of: isLaunchOnStart) { newValue in
                         print("newValue", newValue)
                     }
