@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var fetching = false
     @State private var ipAddress = "127.0.0.1"
     @State private var copyBtnText = "Copy"
+    @State private var isLaunchOnStart = false
     
     var body: some View {
         VStack {
@@ -20,20 +21,36 @@ struct ContentView: View {
                 ProgressView()
                     .scaleEffect(0.5)
             } else {
-                HStack {
-                    Text(ipAddress)
-                        .padding()
-                    Spacer()
-                    Button {
-                        copyButtonPressed()
-                    } label: {
-                        Text(copyBtnText)
+                VStack {
+                    HStack {
+                        Text(ipAddress)
+                            .padding(.leading, 10)
+                        Spacer()
+                        Button {
+                            copyButtonPressed()
+                        } label: {
+                            Text(copyBtnText)
+                        }
+                        .padding(.trailing, 10)
                     }
-                    Spacer()
                 }
             }
+            Divider()
+            HStack {
+                Text("Launch on Start")
+                    .padding(.horizontal, 10)
+                Spacer()
+                Toggle("", isOn: $isLaunchOnStart)
+                    .toggleStyle(.switch)
+                    .toggleStyle(SwitchToggleStyle(tint: .blue))
+                    .padding(.horizontal, 10)
+                    .onChange(of: isLaunchOnStart) { newValue in
+                        print("newValue", newValue)
+                    }
+            }
+            Divider()
         }
-        .frame(width: 200, height: 25)
+        .frame(width: 200, height: 100)
         .task {
             await getIPAddress()
         }
@@ -62,6 +79,10 @@ struct ContentView: View {
         } catch {
             ipAddress = error.localizedDescription
         }
+    }
+    
+    func launchOnStartToggle(){
+        
     }
 }
 
